@@ -5,7 +5,9 @@ module Kontrakt
     getter condition
 
     def initialize(@condition, message = nil : String | Nil)
-      super("Condition >> #{condition} << failed: #{message}")
+      msg = "Condition #{condition.colorize(:red).mode(:bold)} failed"
+      msg += " - #{message.colorize(:yellow).mode(:bright)}" if message
+      super(msg)
     end
   end
 

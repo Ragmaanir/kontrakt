@@ -37,4 +37,4 @@ postcondition(3 == 3 && true != false) # passes
 
 ## Contributors
 
-- [[ragmaanir]](https://github.com/ragmaanir) ragmaanir - creator, maintainer
+- [ragmaanir](https://github.com/ragmaanir) ragmaanir - creator, maintainer
