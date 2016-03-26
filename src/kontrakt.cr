@@ -4,7 +4,7 @@ module Kontrakt
   class ContractViolation < Exception
     getter condition
 
-    def initialize(@condition, message = nil : String | Nil)
+    def initialize(@condition, message : String? = nil)
       msg = "Condition #{condition.colorize(:red).mode(:bold)} failed"
       msg += " - #{message.colorize(:yellow).mode(:bright)}" if message
       super(msg)

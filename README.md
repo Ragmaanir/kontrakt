@@ -26,6 +26,10 @@ precondition(1 == 5) # raises
 postcondition(3 == 3 && true != false) # passes
 ```
 
+## TODO
+
+- output the values of the variables used
+- evaluate partial expressions like power_assert.cr
 
 ## Contributing
 
