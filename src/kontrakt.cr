@@ -18,11 +18,11 @@ module Kontrakt
   end
 
   macro precondition(condition, message = nil)
-    general_assert(Kontrakt::PreConditionViolation, {{condition}}, {{message}})
+    Kontrakt.general_assert(Kontrakt::PreConditionViolation, {{condition}}, {{message}})
   end
 
   macro postcondition(condition, message = nil)
-    general_assert(Kontrakt::PostConditionViolation, {{condition}}, {{message}})
+    Kontrakt.general_assert(Kontrakt::PostConditionViolation, {{condition}}, {{message}})
   end
 
   macro general_assert(cls, condition, message = nil)
