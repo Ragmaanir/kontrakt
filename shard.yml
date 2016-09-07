@@ -1,15 +1,12 @@
 name: kontrakt
-version: 0.2.1
+version: 0.2.2
 
 authors:
   - ragmaanir <ragmaanir@gmail.com>
 
 development_dependencies:
-  minitest:
-    github: ysbaddaden/minitest.cr
-    version: ~> 0.3
-  power_assert:
-    github: rosylilly/power_assert.cr
-    version: ~> 0.2
+  microtest:
+    github: ragmaanir/microtest
+    branch: master
 
 license: MIT

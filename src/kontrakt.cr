@@ -17,15 +17,15 @@ module Kontrakt
   class PostConditionViolation < ContractViolation
   end
 
-  macro precondition(condition, message=nil)
-    general_assert(PreConditionViolation, {{condition}}, {{message}})
+  macro precondition(condition, message = nil)
+    general_assert(Kontrakt::PreConditionViolation, {{condition}}, {{message}})
   end
 
-  macro postcondition(condition, message=nil)
-    general_assert(PostConditionViolation, {{condition}}, {{message}})
+  macro postcondition(condition, message = nil)
+    general_assert(Kontrakt::PostConditionViolation, {{condition}}, {{message}})
   end
 
-  macro general_assert(cls, condition, message=nil)
+  macro general_assert(cls, condition, message = nil)
     if !({{condition}})
       raise {{cls}}.new("{{condition}}", {{message}})
     end
