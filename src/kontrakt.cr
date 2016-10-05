@@ -26,8 +26,10 @@ module Kontrakt
   end
 
   macro general_assert(cls, condition, message = nil)
-    if !({{condition}})
-      raise {{cls}}.new("{{condition}}", {{message}})
-    end
+    {% unless env("DISABLE_CONTRACTS") %}
+      if !({{condition}})
+        raise {{cls}}.new("{{condition}}", {{message}})
+      end
+    {% end %}
   end
 end

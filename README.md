@@ -20,16 +20,20 @@ dependencies:
 ```crystal
 require "kontrakt"
 
-include Kontrakt
+Kontrakt.precondition(1 == 5) # raises
+Kontrakt.postcondition(3 == 3 && true != false) # passes
+```
 
-precondition(1 == 5) # raises
-postcondition(3 == 3 && true != false) # passes
+To disable the conditions set DISABLE_CONTRACTS env var:
+
+```crystal
+DISABLE_CONTRACTS=1 crystal spec
 ```
 
 ## TODO
 
 - output the values of the variables used
-- evaluate partial expressions like power_assert.cr
+- evaluate partial expressions like power_assert.cr. maybe only show leaf-values, e.g. dont show `x && y`, just show `x` and `y`
 
 ## Contributing
 
