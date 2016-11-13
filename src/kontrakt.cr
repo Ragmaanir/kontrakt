@@ -1,3 +1,4 @@
+require "colorize"
 require "./kontrakt/*"
 
 module Kontrakt

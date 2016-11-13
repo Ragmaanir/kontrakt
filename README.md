@@ -1,4 +1,4 @@
-# kontrakt
+# kontrakt [![Build Status](https://travis-ci.org/Ragmaanir/kontrakt.svg?branch=master)](https://travis-ci.org/Ragmaanir/kontrakt)
 
 Kontrakt provides two macros to implement very simple design-by-contract style checks.
 
@@ -34,15 +34,3 @@ DISABLE_CONTRACTS=1 crystal spec
 
 - output the values of the variables used
 - evaluate partial expressions like power_assert.cr. maybe only show leaf-values, e.g. dont show `x && y`, just show `x` and `y`
-
-## Contributing
-
-1. Fork it ( https://github.com/ragmaanir/kontrakt/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [ragmaanir](https://github.com/ragmaanir) ragmaanir - creator, maintainer

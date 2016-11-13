@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe KontraktTest do
+describe Kontrakt do
   test "test precondition" do
     assert_raises(Kontrakt::PreConditionViolation) { Kontrakt.precondition(1 == 0) }
     assert_raises(Kontrakt::PreConditionViolation) { Kontrakt.precondition(5 != 4 && 6 > 7) }
@@ -13,5 +13,19 @@ describe KontraktTest do
     assert_raises(Kontrakt::PostConditionViolation) { Kontrakt.postcondition(5 != 4 && 6 > 7) }
     Kontrakt.postcondition(1 == 1)
     Kontrakt.postcondition(1 == 1 && true != false)
+  end
+
+  test "env var to disable contracts" do
+    result = test_process({"" => ""}) do
+      Kontrakt.precondition(false)
+    end
+
+    assert !result.success?
+
+    result = test_process({"DISABLE_CONTRACTS" => ""}) do
+      Kontrakt.precondition(false)
+    end
+
+    assert result.success?
   end
 end
