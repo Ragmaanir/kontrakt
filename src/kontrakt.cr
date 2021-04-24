@@ -1,5 +1,4 @@
 require "colorize"
-require "./kontrakt/*"
 
 module Kontrakt
   VERSION = {{ `shards version #{__DIR__}`.strip.stringify }}
