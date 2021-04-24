@@ -4,13 +4,15 @@ require "microtest"
 macro test_process(env, &block)
   {%
     c = <<-CRYSTAL
-      require "../src/kontrakt"
+      require "./src/kontrakt"
 
       #{block.body.id}
     CRYSTAL
   %}
 
-  Process.run("crystal", ["eval", {{c}}], {{env}})
+  output = IO::Memory.new
+
+  Process.run("crystal", ["eval", {{c}}], {{env}}, output: output, error: output)
 end
 
 include Microtest::DSL

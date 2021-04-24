@@ -1,5 +1,7 @@
 name: kontrakt
-version: 0.3.0
+version: 0.4.0
+crystal: '>= 0.35.1'
+license: MIT
 
 authors:
   - ragmaanir <ragmaanir@gmail.com>
@@ -8,5 +10,3 @@ development_dependencies:
   microtest:
     github: ragmaanir/microtest
     branch: master
-
-license: MIT

@@ -2,6 +2,8 @@ require "colorize"
 require "./kontrakt/*"
 
 module Kontrakt
+  VERSION = {{ `shards version #{__DIR__}`.strip.stringify }}
+
   class ContractViolation < Exception
     getter condition
 
@@ -27,7 +29,7 @@ module Kontrakt
   end
 
   macro general_assert(cls, condition, message = nil)
-    {% unless env("DISABLE_CONTRACTS") %}
+    {% if !env("DISABLE_CONTRACTS") %}
       if !({{condition}})
         raise {{cls}}.new("{{condition}}", {{message}})
       end

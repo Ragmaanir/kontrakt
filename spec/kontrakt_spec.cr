@@ -16,7 +16,7 @@ describe Kontrakt do
   end
 
   test "env var to disable contracts" do
-    result = test_process({"" => ""}) do
+    result = test_process({} of String => String) do
       Kontrakt.precondition(false)
     end
 
